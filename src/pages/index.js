@@ -11,10 +11,10 @@ const ControlContainer = ({name,onLink,offLink}) => {
     <div className={styles.singleControlContainer}>
       <h3 className={styles.roomName}>{name}</h3>
       <div className={styles.buttonContainer}>
-        <a href={onLink} target="_blank" rel="noopener noreferrer" className={styles.bn62}>
+        {onLink && <a href={onLink} target="_blank" rel="noopener noreferrer" className={styles.bn62}>
           On
-        </a>
-        <a href={offLink} className={styles.bn62}>
+        </a>}
+        <a href={offLink} target="_blank" rel="noopener noreferrer" className={styles.bn62}>
           Off
         </a>
       </div>
@@ -37,7 +37,7 @@ export default function Home() {
           {
             data.map((data,index)=><ControlContainer key={index} name={data.roomName} onLink={`${data.roomLink}on`} offLink={`${data.roomLink}off`} />)
           }
-        
+          <ControlContainer key={999} name="Buzzer" onLink={null} offLink="http://192.168.1.7/buzzeroff"/>
         </div>
       </main>
     </>
