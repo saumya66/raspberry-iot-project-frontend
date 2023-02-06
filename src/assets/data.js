@@ -4,7 +4,7 @@ const data = [
         roomLink : "/guestroom",
     },
     {
-        roomName: "Lounge Room",
+        roomName: "Swimming Pool",
         roomLink : "/swimmingpool",
     },
     {
